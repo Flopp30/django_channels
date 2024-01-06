@@ -2,3 +2,6 @@ django==5.0.1
 channels[daphne]==4.0.0
 environs==10.0.0
 channels_redis==4.1.0
+django-htmx==1.17.2
+django-allauth==0.60.0
+django-bootstrap5==23.4

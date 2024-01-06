@@ -3,10 +3,15 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('chat/', include('chat.urls', namespace='chat'))
+    path('chat/', include('chat.urls', namespace='chat')),
+    path('signing/', include('signing.urls', namespace='signing')),
+    path('', TemplateView.as_view(template_name='.index/index.html'), name='index'),
+
+    path('accounts/', include('allauth.urls')),
 ]
 
 if settings.DEBUG:
